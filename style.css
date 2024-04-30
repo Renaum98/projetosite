@@ -27,7 +27,7 @@
 body {
     background-image: url(imagens/fundo.png);
     background-attachment: fixed;
-    background-size: 200px;
+    background-size: 500px;
     font-family: var(--fonte-principal);
     min-width: 100vh;
 
@@ -75,8 +75,8 @@ nav a:hover {
 
 main {
     background-color: rgba(255, 255, 255, 0.833);
-    max-width: 800px;
-    min-width: 100px;
+    max-width: 1000px;
+    min-width: 300px;
     margin: auto;
     padding: 30px;
     border-radius: 10px;
