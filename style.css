@@ -75,7 +75,7 @@ nav a:hover {
 
 main {
     background-color: rgba(255, 255, 255, 0.833);
-    max-width: 1000px;
+    max-width: 800px;
     min-width: 300px;
     margin: auto;
     padding: 30px;
@@ -106,4 +106,25 @@ main p {
     padding: 30px;
     border-radius: 10px;
     margin: 20px 0px 20px 0px;
+ }
+.frases {
+    text-align: center;
+    text-indent: 0px;
+    margin: 10px;
+ }
+ h3 {
+    text-align: center;
+    margin: 10px;
+ }
+ aside {
+    background-image: radial-gradient(circle, var(--cor3), var(--cor2));
+    padding: 10px;
+    margin: 20px 0px 20px 0px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.333);
+ }
+ #rodape {
+    color: grey;
+    text-align: center;
  }
