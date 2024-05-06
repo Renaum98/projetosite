@@ -107,10 +107,11 @@ main p {
     border-radius: 10px;
     margin: 20px 0px 20px 0px;
  }
-.frases {
+p.frases {
     text-align: center;
     text-indent: 0px;
     margin: 10px;
+    font-weight: bold;
  }
  h3 {
     text-align: center;
@@ -124,7 +125,7 @@ main p {
     color: white;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.333);
  }
- #rodape {
+ p#rodape {
     color: grey;
     text-align: center;
  }
