@@ -106,7 +106,7 @@ p.frases {
     margin: 20px 0px 20px 0px;
     border-radius: 10px;
     color: white;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.333);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.333);
  }
  p#rodape {
     color: grey;
