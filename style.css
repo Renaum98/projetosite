@@ -112,3 +112,10 @@ p.frases {
     color: grey;
     text-align: center;
  }
+ aside > img {
+    width: 300px;
+    max-width: 600px;
+    border-radius: 10px;  
+    display: block;
+    margin: auto;
+ }
