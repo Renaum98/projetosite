@@ -119,3 +119,9 @@ p.frases {
     display: block;
     margin: auto;
  }
+ aside > img:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.347);
+ }
