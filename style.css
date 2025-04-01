@@ -100,7 +100,7 @@ p.frases {
     text-align: center;
     margin: 10px;
  }
- aside {
+ section {
     background-image: radial-gradient(circle, var(--cor3), var(--cor2));
     padding: 10px;
     margin: 20px 0px 20px 0px;
@@ -112,14 +112,14 @@ p.frases {
     color: grey;
     text-align: center;
  }
- aside > img {
+ section > img {
     width: 300px;
     max-width: 600px;
     border-radius: 10px;  
     display: block;
     margin: auto;
  }
- aside > img:hover {
+ section > img:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
     cursor: pointer;
