@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador para Presente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: lightgreen;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            background-color: white;
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        #contador {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+        #mensagem {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        .emoji {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Contagem Regressiva</h1>
+        <div id="contador"></div>
+        <div id="mensagem"></div>
+    </main>
+
+    <script>
+        // Elementos da página
+        const contadorTela = document.querySelector('#contador');
+        const mensagemTela = document.querySelector('#mensagem');
+        
+        // Data objetivo: 8 de junho de 2025 (mês 5, pois junho = 5 em JS)
+        const dataObjetivo = new Date(2025, 5, 8); 
+        
+        function atualizarContador() {
+            // Atualiza a data atual
+            const dataAtual = new Date();
+            
+            // Calcula a diferença em milissegundos
+            const diferencaMs = dataObjetivo - dataAtual;
+            
+            // Converte para dias (arredondando para baixo)
+            const diferencaDias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+            
+            // Atualiza o contador na tela
+            contadorTela.textContent = diferencaDias;
+            
+            // Atualiza a mensagem
+            if (diferencaDias > 0) {
+                mensagemTela.innerHTML = `<span class="emoji">⏳</span> Faltam ${diferencaDias} dias para ABRIR SEU PRESENTE`;
+                mensagemTela.style.color = '#e74c3c';
+            } else if (diferencaDias === 0) {
+                mensagemTela.innerHTML = `<span class="emoji">🎉</span> HOJE É SEU DIA! PODE ABRIR O PRESENTE!`;
+                mensagemTela.style.color = '#27ae60';
+            } else {
+                mensagemTela.innerHTML = `<span class="emoji">⌛</span> Você já deveria ter aberto há ${Math.abs(diferencaDias)} dias!`;
+                mensagemTela.style.color = '#7f8c8d';
+            }
+        }
+        
+        // Atualiza imediatamente e depois a cada 1 hora
+        atualizarContador();
+        setInterval(atualizarContador, 3600000); // 3600000 ms = 1 hora
+        
+        // Log no console para verificação
+        console.log("Data objetivo:", dataObjetivo.toLocaleDateString('pt-BR'));
+    </script>
+</body>
+</html>

@@ -13,7 +13,6 @@
     padding: 0px;
 }
 
-
 :root {
     --cor1: #2B332E;
     --cor2: #3D614C;
@@ -43,8 +42,6 @@ header{
     font-size: 2em;
     color: var(--cor2);
     text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.115);
-
-    
 }
 
 header > h1 {
@@ -84,44 +81,73 @@ main p {
     line-height: 2em;
     font-weight: bold;
 }
- article {
+article {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     margin: 20px 0px 20px 0px;
- }
+}
 p.frases {
     text-align: center;
     text-indent: 0px;
     margin: 10px;
     font-weight: bold;
- }
- h3 {
+}
+h3 {
     text-align: center;
     margin: 10px;
- }
- section {
+}
+section {
     background-image: radial-gradient(circle, var(--cor3), var(--cor2));
     padding: 10px;
     margin: 20px 0px 20px 0px;
     border-radius: 10px;
     color: white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.333);
- }
- p#rodape {
+}
+p#rodape {
     color: grey;
     text-align: center;
- }
- section > img {
+}
+section > img {
     width: 300px;
     max-width: 100%;
     border-radius: 10px;  
     display: block;
     margin: auto;
- }
- section > img:hover {
+}
+section > img:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
     cursor: pointer;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.347);
- }
+}
+#caixa-contador{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+#contador {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e74c3c;
+    background-color: lightcoral;
+    border-radius: 10px;
+    width: 100px;  /* Definir uma largura fixa */
+    height: 100px; /* Definir uma altura fixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 100px; /* Para garantir alinhamento vertical perfeito */
+    }
+#mensagem {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+.emoji {
+    font-size: 2rem;
+}
