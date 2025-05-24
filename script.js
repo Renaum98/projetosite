@@ -1,7 +1,6 @@
 
 // Elementos da página
 const contadorTela = document.querySelector('#contador');
-const mensagemTela = document.querySelector('#mensagem');
 
 // Data objetivo: 8 de junho de 2025 (mês 5, pois junho = 5 em JS)
 const dataObjetivo = new Date(2025, 5, 8); 
@@ -17,7 +16,7 @@ function atualizarContador() {
     const diferencaDias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
     
     // Atualiza o contador na tela
-    contadorTela.innerHTML = `<p>${diferencaDias}</p>`;
+    contadorTela.textContent = diferencaDias;
     
     // Atualiza a mensagem
     if (diferencaDias === 0) {
