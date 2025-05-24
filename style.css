@@ -130,7 +130,7 @@ section > img:hover {
 }
 #contador {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(252, 52, 52);
+    color: rgb(144, 3, 3);
     font-size: 3rem;
     text-align: center;
     width: 100px;
@@ -175,13 +175,16 @@ section > img:hover {
 }
 #contador:hover{
     transform: scale(1.1);
-    transition: 1s;
+    transition: .5s;
 }
 #contador:hover::before{
     opacity: 1;
 }
 #contador:active:after {
     background: transparent;
+}
+#contador:active{
+    color: rgb(251, 89, 89);
 }
 
 
