@@ -8,6 +8,12 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: 'Aniversario';
+    src: url(fonte/HappyBirthday.otf) 
+    format(opentype);
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -81,21 +87,25 @@ main p {
     line-height: 2em;
     font-weight: bold;
 }
+
 article {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     margin: 20px 0px 20px 0px;
 }
+
 p.frases {
     text-align: center;
     text-indent: 0px;
     font-weight: bold;
 }
+
 h3 {
     text-align: center;
     margin: 10px;
 }
+
 section {
     background-image: radial-gradient(circle, var(--cor3), var(--cor2));
     padding: 10px;
@@ -104,10 +114,12 @@ section {
     color: white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.333);
 }
+
 p#rodape {
     color: grey;
     text-align: center;
 }
+
 section > img {
     width: 300px;
     max-width: 100%;
@@ -115,12 +127,14 @@ section > img {
     display: block;
     margin: auto;
 }
+
 section > img:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
     cursor: pointer;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.347);
 }
+
 #caixa-contador{
     display: flex;
     flex-direction: column;
@@ -128,6 +142,7 @@ section > img:hover {
     align-items: center;
     gap: 20px;
 }
+
 #contador {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(144, 3, 3);
@@ -143,6 +158,7 @@ section > img:hover {
     justify-content: center;
     align-items: center;
 }
+
 #contador::after{
     content: "";
     position: absolute;
@@ -152,6 +168,7 @@ section > img:hover {
     border-radius: 10px;
     z-index: -1;
 }
+
 #contador::before{
     content: "";
     background: linear-gradient(
@@ -169,31 +186,26 @@ section > img:hover {
     border-radius: 10px;
     opacity: 0;
 }
+
 @keyframes glowing {
     0%,100% {background-position: 0 0;}
     50% {background-position: 400% 0;}
 }
+
 #contador:hover{
     transform: scale(1.1);
     transition: .5s;
 }
+
 #contador:hover::before{
     opacity: 1;
 }
+
 #contador:active:after {
     background: transparent;
 }
+
 #contador:active{
     color: rgb(251, 89, 89);
 }
 
-
-
-@keyframes fundoAnimado {
-    0%,100%{
-        background-color: darkred;
-    }
-    50%{
-        background-color: red;
-    }
-}
