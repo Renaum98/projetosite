@@ -29,6 +29,14 @@ function atualizarContador() {
     }
 }
 
+const telaAniversario = document.querySelector("#aniversario")
+
+if(contadorTela.textContent == "0d 0h 0min 0s"){
+    console.log("deu certo")
+    telaAniversario.style.display = "block"
+    contadorTela.style.display = "none"
+}
+
 // Atualiza imediatamente e depois a cada segundo
 atualizarContador();
 setInterval(atualizarContador, 1000); // 1000 ms = 1 segundo

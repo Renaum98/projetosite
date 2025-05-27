@@ -203,7 +203,9 @@ section > img:hover {
     color: rgb(251, 89, 89);
     
 }
-
+#aniversario {
+    display: none;
+}
 #aniversario > img{
     border-radius: 10px;
 }
