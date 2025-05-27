@@ -1,32 +1,38 @@
+let imagens = document.querySelector('#imagem');
 
-// Elementos da página
+imagens.addEventListener("click", () => {
+    imagens.style.width = imagens.style.width === "200px" ? "600px" : "200px";
+});
+
+
+
+// Elemento do contador na página
 const contadorTela = document.querySelector('#contador');
 
-// Data objetivo: 8 de junho de 2025 (mês 5, pois junho = 5 em JS)
-const dataObjetivo = new Date(2025, 5, 8); 
+// Data objetivo: 8 de junho de 2025 às 00:00
+const dataObjetivo = new Date(2025, 5, 8, 0, 0, 0);
+
 
 function atualizarContador() {
-    // Atualiza a data atual
     const dataAtual = new Date();
-    
-    // Calcula a diferença em milissegundos
     const diferencaMs = dataObjetivo - dataAtual;
-    
-    // Converte para dias (arredondando para baixo)
-    const diferencaDias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
-    
-    // Atualiza o contador na tela
-    contadorTela.textContent = diferencaDias;
-    
-    // Atualiza a mensagem
-    if (diferencaDias === 0) {
-        
+
+    if (diferencaMs > 0) {
+        const dias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencaMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencaMs % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencaMs % (1000 * 60)) / 1000);
+
+        contadorTela.textContent = `${dias}d ${horas}h ${minutos}min ${segundos}s`;
+    } else {
+        contadorTela.textContent = `0d 0h 0min 0s`;
     }
 }
 
-// Atualiza imediatamente e depois a cada 1 hora
+// Atualiza imediatamente e depois a cada segundo
 atualizarContador();
-setInterval(atualizarContador, 3600000); // 3600000 ms = 1 hora
+setInterval(atualizarContador, 1000); // 1000 ms = 1 segundo
 
 // Log no console para verificação
 console.log("Data objetivo:", dataObjetivo.toLocaleDateString('pt-BR'));
+

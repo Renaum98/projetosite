@@ -36,7 +36,7 @@
             margin-bottom: 20px;
         }
         #contador {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #e74c3c;
             margin: 20px 0;
@@ -59,45 +59,41 @@
     </main>
 
     <script>
-        // Elementos da página
         const contadorTela = document.querySelector('#contador');
         const mensagemTela = document.querySelector('#mensagem');
-        
-        // Data objetivo: 8 de junho de 2025 (mês 5, pois junho = 5 em JS)
-        const dataObjetivo = new Date(2025, 5, 8); 
-        
+
+        // Data objetivo: 8 de junho de 2025 às 00:00
+        const dataObjetivo = new Date(2025, 5, 8, 0, 0, 0);
+
         function atualizarContador() {
-            // Atualiza a data atual
-            const dataAtual = new Date();
-            
-            // Calcula a diferença em milissegundos
-            const diferencaMs = dataObjetivo - dataAtual;
-            
-            // Converte para dias (arredondando para baixo)
-            const diferencaDias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
-            
-            // Atualiza o contador na tela
-            contadorTela.textContent = diferencaDias;
-            
-            // Atualiza a mensagem
-            if (diferencaDias > 0) {
-                mensagemTela.innerHTML = `<span class="emoji">⏳</span> Faltam ${diferencaDias} dias para ABRIR SEU PRESENTE`;
+            const agora = new Date();
+            const diferencaMs = dataObjetivo - agora;
+
+            if (diferencaMs > 0) {
+                const dias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencaMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferencaMs % (1000 * 60 * 60)) / (1000 * 60));
+
+                contadorTela.textContent = `${dias}d ${horas}h ${minutos}min`;
+
+                mensagemTela.innerHTML = `<span class="emoji">⏳</span> Faltam ${dias} dias, ${horas} horas e ${minutos} minutos para ABRIR SEU PRESENTE`;
                 mensagemTela.style.color = '#e74c3c';
-            } else if (diferencaDias === 0) {
-                mensagemTela.innerHTML = `<span class="emoji">🎉</span> HOJE É SEU DIA! PODE ABRIR O PRESENTE!`;
+            } else if (diferencaMs > -60000) {
+                contadorTela.textContent = `0d 0h 0min`;
+                mensagemTela.innerHTML = `<span class="emoji">🎉</span> É HORA! PODE ABRIR O PRESENTE!`;
                 mensagemTela.style.color = '#27ae60';
             } else {
-                mensagemTela.innerHTML = `<span class="emoji">⌛</span> Você já deveria ter aberto há ${Math.abs(diferencaDias)} dias!`;
+                const diasAtraso = Math.floor(Math.abs(diferencaMs) / (1000 * 60 * 60 * 24));
+                contadorTela.textContent = `0d 0h 0min`;
+                mensagemTela.innerHTML = `<span class="emoji">⌛</span> Você já deveria ter aberto há ${diasAtraso} dias!`;
                 mensagemTela.style.color = '#7f8c8d';
             }
         }
-        
-        // Atualiza imediatamente e depois a cada 1 hora
+
         atualizarContador();
-        setInterval(atualizarContador, 3600000); // 3600000 ms = 1 hora
-        
-        // Log no console para verificação
-        console.log("Data objetivo:", dataObjetivo.toLocaleDateString('pt-BR'));
+        setInterval(atualizarContador, 60000); // Atualiza a cada minuto
+
+        console.log("Data objetivo:", dataObjetivo.toLocaleString('pt-BR'));
     </script>
 </body>
 </html>
