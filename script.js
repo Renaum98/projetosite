@@ -26,16 +26,15 @@ function atualizarContador() {
         contadorTela.textContent = `${dias}d ${horas}h ${minutos}min ${segundos}s`;
     } else {
         contadorTela.textContent = `0d 0h 0min 0s`;
+        console.log("deu certo")
+        telaAniversario.style.display = "block"
+        contadorTela.style.display = "none"
     }
 }
 
 const telaAniversario = document.querySelector("#aniversario")
 
-if(contadorTela.textContent == "0d 0h 0min 0s"){
-    console.log("deu certo")
-    telaAniversario.style.display = "block"
-    contadorTela.style.display = "none"
-}
+
 
 // Atualiza imediatamente e depois a cada segundo
 atualizarContador();
