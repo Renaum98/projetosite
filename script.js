@@ -23,12 +23,12 @@ function atualizarContador() {
         const minutos = Math.floor((diferencaMs % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((diferencaMs % (1000 * 60)) / 1000);
 
-        contadorTela.textContent = `${dias}d ${horas}h ${minutos}min ${segundos}s`;
+        contadorTela.textContent = `${dias}d ${horas}h ${minutos}min ${segundos}s ⏳`;
     } else {
         contadorTela.textContent = `0d 0h 0min 0s`;
         console.log("deu certo")
-        telaAniversario.style.display = "block"
-        contadorTela.style.display = "none"
+        //telaAniversario.style.display = "block"
+        //contadorTela.style.display = "none"
     }
 }
 

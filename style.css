@@ -210,11 +210,21 @@ section > img:hover {
     padding: 10px;
 }
 #aniversario > img{
-    box-shadow: 0 0 10px white,
-                0 0 20px red,
-                0 0 35px rgba(0, 0, 255, 0.781);
     border-radius: 10px;
     border: none;
     max-width: 100%;
+    animation: glow 5s infinite linear;
+}
+@keyframes glow {
+    0%,100%{
+        box-shadow: none;
+        transform: scale(1.0);
+    }
+    50%{
+        box-shadow: 
+        0 0 10px white,
+        0 0 20px red,
+        0 0 35px rgba(0, 0, 255, 0.781);
+    }
 }
 
