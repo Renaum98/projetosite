@@ -7,7 +7,7 @@ imagens.addEventListener("click", () => {
 
 
 // Elemento do contador na página
-const contadorTela = document.querySelector('#contador');
+const contadorTela = document.querySelector('.contador');
 
 // Data objetivo: 8 de junho de 2025 às 00:00
 const dataObjetivo = new Date(2025, 5, 8, 0, 0, 0);
@@ -25,10 +25,13 @@ function atualizarContador() {
 
         contadorTela.textContent = `${dias}d ${horas}h ${minutos}min ${segundos}s ⏳`;
     } else {
-        contadorTela.textContent = `0d 0h 0min 0s`;
-        console.log("deu certo")
-        //telaAniversario.style.display = "block"
-        //contadorTela.style.display = "none"
+        contadorTela.textContent = `Abrir Surpresa 🎁`;
+        contadorTela.classList.add("contador-link");
+        contadorTela.classList.remove("contador")
+        contadorTela.onclick = () => {
+            telaAniversario.style.display = "block"
+            contadorTela.style.display = "none"    
+        }
     }
 }
 

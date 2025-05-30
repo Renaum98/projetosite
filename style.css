@@ -143,7 +143,7 @@ section > img:hover {
     gap: 20px;
 }
 
-#contador {
+.contador {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(144, 3, 3);
     font-size: 2rem;
@@ -154,13 +154,43 @@ section > img:hover {
     border-radius: 12px;
     position: relative;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contador-link {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 66, 0);
+    font-size: 1rem;
+    text-align: center;
+    max-width: 100%;
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 0;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.contador-link::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: lightgreen;
+    border-radius: 10px;
+    z-index: -1;
+}
+.contador-link:hover{
+    box-shadow: 
+    0 0 5px green
+    0 0 10px green
+    0 0 15px green;
+}
 
-#contador::after{
+.contador::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -170,7 +200,7 @@ section > img:hover {
     z-index: -1;
 }
 
-#contador::before{
+.contador::before{
     content: "";
     background: linear-gradient(
         60deg,red, darkred,orange, yellow );
@@ -192,15 +222,15 @@ section > img:hover {
     0%,100% {background-position: 0 0;}
     50% {background-position: 400% 0;}
 }
-#contador:hover::before{
+.contador:hover::before{
     opacity: 1;
 }
 
-#contador:active:after {
+.contador:active:after {
     background: transparent;
 }
 
-#contador:active{
+.contador:active{
     color: rgb(251, 89, 89);
     
 }
