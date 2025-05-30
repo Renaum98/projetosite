@@ -45,7 +45,7 @@ header{
     min-width: 300px;
     padding: 40px;
     font-family: var(--fonte-titulo);
-    font-size: 2em;
+    font-size: 1.5em;
     color: var(--cor2);
     text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.115);
 }
