@@ -10,7 +10,7 @@ imagens.addEventListener("click", () => {
 const contadorTela = document.querySelector('.contador');
 
 // Data objetivo: 8 de junho de 2025 às 00:00
-const dataObjetivo = new Date(2025, 5, 8, 0, 0, 0);
+const dataObjetivo = new Date(2025, 4, 8, 0, 0, 0);
 
 
 function atualizarContador() {
