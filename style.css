@@ -57,11 +57,12 @@ header > h1 {
 }
 
 main {
-    background-color: rgba(255, 255, 255, 0.068);
+    background-color: rgba(122, 122, 122, 0.068);
     max-width: 70%;
     min-width: 300px;
     margin: auto;
     padding: 30px;
+    border: 1px solid rgba(173, 173, 173, 0.336);
     border-radius: 10px;
     margin-top: 55px;
     margin-bottom: 20px;
@@ -235,7 +236,6 @@ section > img:hover {
     border-radius: 10px;
     border: none;
     max-width: 100%;
-    min-width: 300px;
     animation: glow 3s infinite linear;
 }
 @keyframes glow {
